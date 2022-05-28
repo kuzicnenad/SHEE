@@ -1,6 +1,10 @@
 package com.project.shee.smarthomeenergyefficiency.entities;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table (name = "RegularUser")
@@ -14,12 +18,29 @@ public class RegularUser {
 
     private Integer controller_id;
 
+    @NotEmpty
+    @Size(max = 30)
+    @Pattern(regexp="^[a-zA-ZÀ-ž]*$")
     private String street;
 
+    @NotEmpty
+    @Size(max = 30)
+    @Pattern(regexp="^[a-zA-ZÀ-ž]*$")
     private String city;
 
+    @NotEmpty
+    @Size(max = 30)
+    @Pattern(regexp="^[a-zA-ZÀ-ž]*$")
     private String region;
 
+    @NotEmpty
+    @Size(max = 30)
+    @Pattern(regexp="^[a-zA-ZÀ-ž]*$")
+    private String country;
+
+    @NotNull
+    @Size(min=9, max=20, message = "Please enter valid phone number.")
+    @Pattern(regexp="^[\\- +0-9]*$", message = "Please enter valid phone number.")
     private String phone_num;
 
 
@@ -71,6 +92,14 @@ public class RegularUser {
 
     public String getRegion() {
         return region;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
     }
 
     public void setRegion(String region) {

@@ -1,6 +1,9 @@
 package com.project.shee.smarthomeenergyefficiency.entities;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table (name = "Admin")
@@ -11,6 +14,9 @@ public class Admin {
 
     private Integer account_id;
 
+    @NotEmpty
+    @Size(max = 30)
+    @Pattern(regexp="^[a-zA-ZÀ-ž]*$")
     private String location;
 
     //constructor

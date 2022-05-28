@@ -1,6 +1,11 @@
 package com.project.shee.smarthomeenergyefficiency.entities;
 
+import org.springframework.data.annotation.CreatedDate;
+
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 import java.sql.Date;
 
 @Entity
@@ -13,14 +18,27 @@ public class Hardware {
 
     private Integer controller_id;
 
+    @NotEmpty
+    @Size(min = 16, max = 16, message = "Serial number is 16 characters long.")
+    @Pattern(regexp="^[A-Za-z0-9]*$")
     private Integer serial_number;
 
+    @NotEmpty
+    @Size(max = 50)
+    @Pattern(regexp="^[a-zA-ZÀ-ž]*$")
     private String name;
 
+    @NotEmpty
+    @Size(max = 20)
     private String type;
 
+    @NotEmpty
+    @Size(max = 30)
+    @Pattern(regexp="^[a-zA-ZÀ-ž]*$")
     private String made_in;
 
+    @NotEmpty
+    @CreatedDate
     private Date manufactured;
 
 

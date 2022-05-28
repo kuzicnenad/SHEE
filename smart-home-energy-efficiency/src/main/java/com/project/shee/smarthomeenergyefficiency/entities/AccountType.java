@@ -1,6 +1,8 @@
 package com.project.shee.smarthomeenergyefficiency.entities;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table (name = "AccountType")
@@ -8,8 +10,11 @@ public class AccountType {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @NotEmpty
+    @Size(max = 15)
     private Integer account_type;
 
+    @NotEmpty
     private Integer account_id;
 
     //constructor

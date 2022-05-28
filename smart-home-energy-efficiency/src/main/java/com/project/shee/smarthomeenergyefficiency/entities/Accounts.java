@@ -1,6 +1,11 @@
 package com.project.shee.smarthomeenergyefficiency.entities;
 
+
+import org.springframework.data.annotation.CreatedDate;
+
 import javax.persistence.*;
+import javax.validation.constraints.*;
+
 import java.sql.Date;
 
 @Entity
@@ -13,12 +18,22 @@ public class Accounts {
 
     private Integer type_id;
 
+    @NotEmpty
+    @Size(min = 3, max = 50, message = "Name must be greater then 3 and less then 50 characters long.")
+    @Pattern(regexp="^[a-zA-ZÀ-ž]*$")
     private String name;
 
+    @NotEmpty
+    @Email(message = "Please insert valid email address.")
     private String email;
 
+    @NotEmpty
+    @Size(min = 8, max = 50, message = "Password must be at least 8 and less then 50 characters long.")
+    @Pattern(regexp="(?=.*?[0-9])(?=.*?[A-Za-z])(?=.*[^0-9A-Za-z]).+", message = "Password must contain at least one digit, one letter and one special character")
     private String password;
 
+    @NotNull(message = "Insert valid date.")
+    @CreatedDate
     private Date registered;
 
     // Constructor
