@@ -9,63 +9,70 @@ public class Controller {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer ControllerID;
+    private Integer controller_id;
 
-    private Integer SerialNumber;
+    private Integer serial_number;
 
-    private String Firmware;
+    private String firmware;
 
-    private String Software;
+    private String software;
 
-    private String MadeIn;
+    private String made_in;
 
-    private Date Manufactured;
+    private Date manufactured;
 
-    public Integer getControllerID() {
-        return ControllerID;
+    //constructor
+    public Controller() {
+
     }
 
-    public void setControllerID(Integer controllerID) {
-        ControllerID = controllerID;
+    //getters and setters
+    public Integer getController_id() {
+        return controller_id;
     }
 
-    public Integer getSerialNumber() {
-        return SerialNumber;
+    public void setController_id(Integer controller_id) {
+        this.controller_id = controller_id;
     }
 
-    public void setSerialNumber(Integer serialNumber) {
-        SerialNumber = serialNumber;
+    public Integer getSerial_number() {
+        return serial_number;
+    }
+
+    public void setSerial_number(Integer serial_number) {
+        this.serial_number = serial_number;
     }
 
     public String getFirmware() {
-        return Firmware;
+        return firmware;
     }
 
     public void setFirmware(String firmware) {
-        Firmware = firmware;
+        this.firmware = firmware;
     }
 
     public String getSoftware() {
-        return Software;
+        return software;
     }
 
     public void setSoftware(String software) {
-        Software = software;
+        this.software = software;
     }
 
-    public String getMadeIn() {
-        return MadeIn;
+    public String getMade_in() {
+        return made_in;
     }
 
-    public void setMadeIn(String madeIn) {
-        MadeIn = madeIn;
+    public void setMade_in(String made_in) {
+        this.made_in = made_in;
     }
 
     public Date getManufactured() {
-        return Manufactured;
+        return manufactured;
     }
 
     public void setManufactured(Date manufactured) {
-        Manufactured = manufactured;
+        this.manufactured = manufactured;
     }
+
 }

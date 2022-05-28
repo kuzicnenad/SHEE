@@ -9,43 +9,70 @@ public class Accounts {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer AccountID;
+    private Integer account_id;
 
-    private String Email;
+    private Integer type_id;
 
-    private String Password;
+    private String name;
 
-    private Date Registered;
+    private String email;
 
-    public Integer getAccountID() {
-        return AccountID;
+    private String password;
+
+    private Date registered;
+
+    // Constructor
+    public Accounts() {
+
     }
 
-    public void setAccountID(Integer accountID) {
-        AccountID = accountID;
+    // getters and setters
+
+    public Integer getAccount_id() {
+        return account_id;
+    }
+
+    public void setAccount_id(Integer account_id) {
+        this.account_id = account_id;
+    }
+
+    public Integer getType_id() {
+        return type_id;
+    }
+
+    public void setType_id(Integer type_id) {
+        this.type_id = type_id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getEmail() {
-        return Email;
+        return email;
     }
 
     public void setEmail(String email) {
-        Email = email;
+        this.email = email;
     }
 
     public String getPassword() {
-        return Password;
+        return password;
     }
 
     public void setPassword(String password) {
-        Password = password;
+        this.password = password;
     }
 
     public Date getRegistered() {
-        return Registered;
+        return registered;
     }
 
     public void setRegistered(Date registered) {
-        Registered = registered;
+        this.registered = registered;
     }
 }

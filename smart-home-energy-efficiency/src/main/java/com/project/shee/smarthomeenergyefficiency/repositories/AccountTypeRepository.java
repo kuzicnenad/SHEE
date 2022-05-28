@@ -1,10 +1,9 @@
 package com.project.shee.smarthomeenergyefficiency.repositories;
 
-import com.project.shee.smarthomeenergyefficiency.entities.Accounts;
+import com.project.shee.smarthomeenergyefficiency.entities.AccountType;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface AccountsRepository extends CrudRepository<Accounts, Integer> {
-
+public interface AccountTypeRepository extends CrudRepository<AccountType, Integer> {
 }

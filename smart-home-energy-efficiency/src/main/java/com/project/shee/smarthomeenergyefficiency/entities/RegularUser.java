@@ -8,73 +8,80 @@ public class RegularUser {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer UserID;
+    private Integer user_id;
 
-    private Integer AccountID;
+    private Integer account_id;
 
-    private Integer ControllerID;
+    private Integer controller_id;
 
-    private String UserName;
+    private String street;
 
-    private String Street;
+    private String city;
 
-    private String City;
+    private String region;
 
-    private String PhoneNum;
+    private String phone_num;
 
-    public Integer getUserID() {
-        return UserID;
+
+    //constructor
+    public RegularUser() {
+
     }
 
-    public void setUserID(Integer userID) {
-        UserID = userID;
+    //getters and setters
+    public Integer getUser_id() {
+        return user_id;
     }
 
-    public Integer getAccountID() {
-        return AccountID;
+    public void setUser_id(Integer user_id) {
+        this.user_id = user_id;
     }
 
-    public void setAccountID(Integer accountID) {
-        AccountID = accountID;
+    public Integer getAccount_id() {
+        return account_id;
     }
 
-    public Integer getControllerID() {
-        return ControllerID;
+    public void setAccount_id(Integer account_id) {
+        this.account_id = account_id;
     }
 
-    public void setControllerID(Integer controllerID) {
-        ControllerID = controllerID;
+    public Integer getController_id() {
+        return controller_id;
     }
 
-    public String getUserName() {
-        return UserName;
-    }
-
-    public void setUserName(String userName) {
-        UserName = userName;
+    public void setController_id(Integer controller_id) {
+        this.controller_id = controller_id;
     }
 
     public String getStreet() {
-        return Street;
+        return street;
     }
 
     public void setStreet(String street) {
-        Street = street;
+        this.street = street;
     }
 
     public String getCity() {
-        return City;
+        return city;
     }
 
     public void setCity(String city) {
-        City = city;
+        this.city = city;
     }
 
-    public String getPhoneNum() {
-        return PhoneNum;
+    public String getRegion() {
+        return region;
     }
 
-    public void setPhoneNum(String phoneNum) {
-        PhoneNum = phoneNum;
+    public void setRegion(String region) {
+        this.region = region;
+    }
+
+    public String getPhone_num() {
+        return phone_num;
+    }
+
+    public void setPhone_num(String phone_num) {
+        this.phone_num = phone_num;
     }
 }

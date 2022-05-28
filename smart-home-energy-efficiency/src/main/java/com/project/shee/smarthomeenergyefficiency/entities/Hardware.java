@@ -9,73 +9,81 @@ public class Hardware {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer HardwareID;
+    private Integer hardware_id;
 
-    private Integer ControllerID;
+    private Integer controller_id;
 
-    private Integer SerialNumber;
+    private Integer serial_number;
 
-    private String Name;
+    private String name;
 
-    private String Type;
+    private String type;
 
-    private String MadeIn;
+    private String made_in;
 
-    private Date Manufactured;
+    private Date manufactured;
 
-    public Integer getHardwareID() {
-        return HardwareID;
+
+    //constructor
+    public Hardware() {
+
     }
 
-    public void setHardwareID(Integer hardwareID) {
-        HardwareID = hardwareID;
+    //getters and setters
+    public Integer getHardware_id() {
+        return hardware_id;
     }
 
-    public Integer getControllerID() {
-        return ControllerID;
+    public void setHardware_id(Integer hardware_id) {
+        this.hardware_id = hardware_id;
     }
 
-    public void setControllerID(Integer controllerID) {
-        ControllerID = controllerID;
+    public Integer getController_id() {
+        return controller_id;
     }
 
-    public Integer getSerialNumber() {
-        return SerialNumber;
+    public void setController_id(Integer controller_id) {
+        this.controller_id = controller_id;
     }
 
-    public void setSerialNumber(Integer serialNumber) {
-        SerialNumber = serialNumber;
+    public Integer getSerial_number() {
+        return serial_number;
+    }
+
+    public void setSerial_number(Integer serial_number) {
+        this.serial_number = serial_number;
     }
 
     public String getName() {
-        return Name;
+        return name;
     }
 
     public void setName(String name) {
-        Name = name;
+        this.name = name;
     }
 
     public String getType() {
-        return Type;
+        return type;
     }
 
     public void setType(String type) {
-        Type = type;
+        this.type = type;
     }
 
-    public String getMadeIn() {
-        return MadeIn;
+    public String getMade_in() {
+        return made_in;
     }
 
-    public void setMadeIn(String madeIn) {
-        MadeIn = madeIn;
+    public void setMade_in(String made_in) {
+        this.made_in = made_in;
     }
 
     public Date getManufactured() {
-        return Manufactured;
+        return manufactured;
     }
 
     public void setManufactured(Date manufactured) {
-        Manufactured = manufactured;
+        this.manufactured = manufactured;
     }
+
 }
