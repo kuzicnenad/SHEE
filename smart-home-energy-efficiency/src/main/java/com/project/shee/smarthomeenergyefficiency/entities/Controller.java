@@ -17,9 +17,17 @@ public class Controller {
     private Integer controller_id;
 
     @NotEmpty
+    private Integer manufacturer_id;
+
+    @NotEmpty
     @Size(min = 16, max = 16, message = "Serial number is 16 characters long.")
     @Pattern(regexp="^[A-Za-z0-9]*$")
-    private Integer serial_number;
+    private String serial_number;
+
+    @NotEmpty
+    @Size(min = 3, max = 50, message = "Name must be greater then 3 and less then 50 characters long.")
+    @Pattern(regexp="^[a-zA-ZÀ-ž]*$")
+    private String name;
 
     @NotEmpty
     @Size(max = 8)
@@ -30,11 +38,6 @@ public class Controller {
     @Size(max = 8)
     @Pattern(regexp = "^[0-9.]*$")
     private String software;
-
-    @NotEmpty
-    @Size(max = 30)
-    @Pattern(regexp="^[a-zA-ZÀ-ž]*$")
-    private String made_in;
 
     @NotEmpty
     @CreatedDate
@@ -54,12 +57,28 @@ public class Controller {
         this.controller_id = controller_id;
     }
 
-    public Integer getSerial_number() {
+    public Integer getManufacturer_id() {
+        return manufacturer_id;
+    }
+
+    public void setManufacturer_id(Integer manufacturer_id) {
+        this.manufacturer_id = manufacturer_id;
+    }
+
+    public String getSerial_number() {
         return serial_number;
     }
 
-    public void setSerial_number(Integer serial_number) {
+    public void setSerial_number(String serial_number) {
         this.serial_number = serial_number;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getFirmware() {
@@ -78,14 +97,6 @@ public class Controller {
         this.software = software;
     }
 
-    public String getMade_in() {
-        return made_in;
-    }
-
-    public void setMade_in(String made_in) {
-        this.made_in = made_in;
-    }
-
     public Date getManufactured() {
         return manufactured;
     }
@@ -93,5 +104,4 @@ public class Controller {
     public void setManufactured(Date manufactured) {
         this.manufactured = manufactured;
     }
-
 }

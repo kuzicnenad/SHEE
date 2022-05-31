@@ -12,29 +12,32 @@ public class AccountType {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @NotEmpty
     @Size(max = 15)
-    private Integer account_type;
+    private Integer type_id;
 
     @NotEmpty
-    private Integer account_id;
+    @NotEmpty
+    @Size(max = 15)
+    private String account_type;
 
     //constructor
     public AccountType() {
+
     }
 
     //getters and setters
-    public Integer getAccount_type() {
+    public Integer getType_id() {
+        return type_id;
+    }
+
+    public void setType_id(Integer type_id) {
+        this.type_id = type_id;
+    }
+
+    public String getAccount_type() {
         return account_type;
     }
 
-    public void setAccount_type(Integer account_type) {
+    public void setAccount_type(String account_type) {
         this.account_type = account_type;
-    }
-
-    public Integer getAccount_id() {
-        return account_id;
-    }
-
-    public void setAccount_id(Integer account_id) {
-        this.account_id = account_id;
     }
 }

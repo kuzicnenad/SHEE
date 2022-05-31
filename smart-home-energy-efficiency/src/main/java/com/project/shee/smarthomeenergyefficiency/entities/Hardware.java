@@ -19,23 +19,22 @@ public class Hardware {
     private Integer controller_id;
 
     @NotEmpty
-    @Size(min = 16, max = 16, message = "Serial number is 16 characters long.")
-    @Pattern(regexp="^[A-Za-z0-9]*$")
-    private Integer serial_number;
+    private Integer manufacturer_id;
 
     @NotEmpty
-    @Size(max = 50)
+    @Size(min = 16, max = 16, message = "Serial number is 16 characters long.")
+    @Pattern(regexp="^[A-Za-z0-9]*$")
+    private String serial_number;
+
+    @NotEmpty
+    @Size(min = 3, max = 50, message = "Name must be greater then 3 and less then 50 characters long.")
     @Pattern(regexp="^[a-zA-ZÀ-ž]*$")
     private String name;
 
     @NotEmpty
-    @Size(max = 20)
-    private String type;
-
-    @NotEmpty
-    @Size(max = 30)
+    @Size(max = 20, message = "Name must be greater then 3 and less then 50 characters long.")
     @Pattern(regexp="^[a-zA-ZÀ-ž]*$")
-    private String made_in;
+    private String type;
 
     @NotEmpty
     @CreatedDate
@@ -64,11 +63,19 @@ public class Hardware {
         this.controller_id = controller_id;
     }
 
-    public Integer getSerial_number() {
+    public Integer getManufacturer_id() {
+        return manufacturer_id;
+    }
+
+    public void setManufacturer_id(Integer manufacturer_id) {
+        this.manufacturer_id = manufacturer_id;
+    }
+
+    public String getSerial_number() {
         return serial_number;
     }
 
-    public void setSerial_number(Integer serial_number) {
+    public void setSerial_number(String serial_number) {
         this.serial_number = serial_number;
     }
 
@@ -88,14 +95,6 @@ public class Hardware {
         this.type = type;
     }
 
-    public String getMade_in() {
-        return made_in;
-    }
-
-    public void setMade_in(String made_in) {
-        this.made_in = made_in;
-    }
-
     public Date getManufactured() {
         return manufactured;
     }
@@ -103,5 +102,4 @@ public class Hardware {
     public void setManufactured(Date manufactured) {
         this.manufactured = manufactured;
     }
-
 }
