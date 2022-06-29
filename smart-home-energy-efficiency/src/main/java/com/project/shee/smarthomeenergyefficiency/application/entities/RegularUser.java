@@ -1,4 +1,4 @@
-package com.project.shee.smarthomeenergyefficiency.entities;
+package com.project.shee.smarthomeenergyefficiency.application.entities;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;

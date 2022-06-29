@@ -1,4 +1,4 @@
-package com.project.shee.smarthomeenergyefficiency.entities;
+package com.project.shee.smarthomeenergyefficiency.application.entities;
 
 import org.springframework.data.annotation.CreatedDate;
 
@@ -9,11 +9,13 @@ import javax.validation.constraints.Size;
 import java.sql.Date;
 
 @Entity
-@Table (name = "Controller")
-public class Controller {
+@Table (name = "Hardware")
+public class Hardware {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer hardware_id;
+
     private Integer controller_id;
 
     @NotEmpty
@@ -30,25 +32,29 @@ public class Controller {
     private String name;
 
     @NotEmpty
-    @Size(max = 8)
-    @Pattern(regexp = "^[0-9.]*$")
-    private String firmware;
-
-    @NotEmpty
-    @Size(max = 8)
-    @Pattern(regexp = "^[0-9.]*$")
-    private String software;
+    @Size(max = 20, message = "Name must be greater then 3 and less then 50 characters long.")
+    @Pattern(regexp="^[a-zA-ZÀ-ž]*$")
+    private String type;
 
     @NotEmpty
     @CreatedDate
     private Date manufactured;
 
+
     //constructor
-    public Controller() {
+    public Hardware() {
 
     }
 
     //getters and setters
+    public Integer getHardware_id() {
+        return hardware_id;
+    }
+
+    public void setHardware_id(Integer hardware_id) {
+        this.hardware_id = hardware_id;
+    }
+
     public Integer getController_id() {
         return controller_id;
     }
@@ -81,20 +87,12 @@ public class Controller {
         this.name = name;
     }
 
-    public String getFirmware() {
-        return firmware;
+    public String getType() {
+        return type;
     }
 
-    public void setFirmware(String firmware) {
-        this.firmware = firmware;
-    }
-
-    public String getSoftware() {
-        return software;
-    }
-
-    public void setSoftware(String software) {
-        this.software = software;
+    public void setType(String type) {
+        this.type = type;
     }
 
     public Date getManufactured() {

@@ -1,7 +1,7 @@
-package com.project.shee.smarthomeenergyefficiency.controllers;
+package com.project.shee.smarthomeenergyefficiency.application.controllers;
 
-import com.project.shee.smarthomeenergyefficiency.entities.Controller;
-import com.project.shee.smarthomeenergyefficiency.repositories.ControllerRepository;
+import com.project.shee.smarthomeenergyefficiency.application.entities.Controller;
+import com.project.shee.smarthomeenergyefficiency.application.repositories.ControllerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

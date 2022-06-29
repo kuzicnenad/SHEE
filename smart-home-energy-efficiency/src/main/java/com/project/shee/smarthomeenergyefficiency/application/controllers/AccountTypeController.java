@@ -1,7 +1,7 @@
-package com.project.shee.smarthomeenergyefficiency.controllers;
+package com.project.shee.smarthomeenergyefficiency.application.controllers;
 
-import com.project.shee.smarthomeenergyefficiency.entities.AccountType;
-import com.project.shee.smarthomeenergyefficiency.repositories.AccountTypeRepository;
+import com.project.shee.smarthomeenergyefficiency.application.entities.AccountType;
+import com.project.shee.smarthomeenergyefficiency.application.repositories.AccountTypeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

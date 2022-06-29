@@ -1,6 +1,6 @@
-package com.project.shee.smarthomeenergyefficiency.repositories;
+package com.project.shee.smarthomeenergyefficiency.application.repositories;
 
-import com.project.shee.smarthomeenergyefficiency.entities.RegularUser;
+import com.project.shee.smarthomeenergyefficiency.application.entities.RegularUser;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
